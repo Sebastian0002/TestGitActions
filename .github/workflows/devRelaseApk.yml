@@ -1,4 +1,7 @@
-embeds: '[{"title": "hola mundo", "description":"HI!"}]'
+---
+embeds: 
+- title: "Hello!"
+  description: "Hi! :grinning:"
 on:
   push:
     branches:
