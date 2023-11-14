@@ -41,7 +41,8 @@ jobs:
           webhook_id: ${{ secrets.WEBHOOK_ID }}
           webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
           avatar_url: "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
-          #file: "./images/moto.jpg"
+          username: "DriveApk bot"
+          file: "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
           message: ${{ secrets.MESSAGE_DISCORD }}
              
       
