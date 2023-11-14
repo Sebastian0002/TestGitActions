@@ -1,10 +1,10 @@
+embeds: '[{"title": "hola mundo", "description":"HI!"}]'
 on:
   push:
     branches:
       - main
 
 name: Build Test Apps
-embeds: '[{"title": "hola mundo", "description":"HI!"}]'
 
 jobs:
   build:
