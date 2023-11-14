@@ -40,7 +40,8 @@ jobs:
         with:
           webhook_id: ${{ secrets.WEBHOOK_ID }}
           webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
-          #file: "./images/message.png"
+          avatar_url: "./images/message.png"
+          file: "./images/message.png"
           message: ${{ secrets.MESSAGE_DISCORD }}
              
       
