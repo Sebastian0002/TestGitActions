@@ -36,7 +36,7 @@ jobs:
           name: "apk.zip" # optional string
           overwrite: "true"
       - name: Send notify a telegram group
-      - uses: robotomize/notify-telegram@v0.1.0
+        uses: robotomize/notify-telegram@v0.1.0
         if: always()
         with:
           chat: ${{ secrets.CHATID }} # user id or channel name secret
