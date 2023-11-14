@@ -35,14 +35,26 @@ jobs:
       #     folderId: ${{ secrets.FOLDERID }}
       #     name: "apk.zip" # optional string
       #     overwrite: "true"
-      - name: Discord Message Notify
-        uses: appleboy/discord-action@v1.0.0
+      
+      - name: Discord Courier
+        uses: snorrwe/discord-action@v1.0.4
         with:
-          webhook_id: ${{ secrets.WEBHOOK_ID }}
-          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
-          avatar_url: "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
-          username: "DriveApk bot"
-          message: ${{ secrets.MESSAGE_DISCORD }} "\n"
+          discord_message: hola mundo
+          discord_token: ${{ secrets.WEBHOOK_TOKEN }}
+          post_file: README.md
+          discord_channel: ${{ secrets.WEBHOOK_ID }} 
+      
+      
+      
+      
+      # - name: Discord Message Notify
+      #   uses: appleboy/discord-action@v1.0.0
+      #   with:
+      #     webhook_id: ${{ secrets.WEBHOOK_ID }}
+      #     webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+      #     avatar_url: "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
+      #     username: "DriveApk bot"
+      #     message: ${{ secrets.MESSAGE_DISCORD }} /n
              
       
       # - name: Send notify a telegram group
