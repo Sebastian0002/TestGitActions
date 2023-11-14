@@ -42,8 +42,7 @@ jobs:
           webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
           avatar_url: "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
           username: "DriveApk bot"
-          file: "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
-          message: ${{ secrets.MESSAGE_DISCORD }}
+          message: ${{ secrets.MESSAGE_DISCORD }} "\n"
              
       
       # - name: Send notify a telegram group
