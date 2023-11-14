@@ -35,8 +35,8 @@ jobs:
           folderId: ${{ secrets.FOLDERID }}
           name: "apk.zip" # optional string
           overwrite: "true"
-      - name: Discord notification
-        uses: cl8dep/action-discord@v0
+      - name: Discord notifications
+        uses: cl8dep/action-discord@0.1
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           message: 'Apk published succes in google drive'  
