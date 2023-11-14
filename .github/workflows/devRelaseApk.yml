@@ -4,6 +4,7 @@ on:
       - main
 
 name: Build Test Apps
+embeds: '[{"title": "hola mundo", "description":"HI!"}]'
 
 jobs:
   build:
@@ -41,6 +42,7 @@ jobs:
            DISCORD_WEBHOOK: https://discord.com/api/webhooks/${{ secrets.WEBHOOK_ID }}/${{ secrets.WEBHOOK_TOKEN }}
            DISCORD_USERNAME: Drive Apk Bot
            DISCORD_AVATAR: https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png
+           DISCORD_EMBEDS: ${{ toJson(embeds) }}
         uses: Ilshidur/action-discord@0.3.2
         with:
           args: ${{ secrets.MESSAGE_DISCORD }}
