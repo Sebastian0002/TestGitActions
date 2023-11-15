@@ -39,10 +39,10 @@ jobs:
       - id: set_var
         run: |
           content=`cat json/embeds.json`
-          echo "packageJson=$content" >> $GITHUB_ENV
-          echo ${{ toJson(env.packageJson) }}
+          echo "packageJson=$content" >> $GITHUB_OUTPUT
 
       - name: Actions for Discord
+        run: echo ${{steps.set_var.packageJson}}
         env:
            DISCORD_WEBHOOK: https://discord.com/api/webhooks/${{ secrets.WEBHOOK_ID }}/${{ secrets.WEBHOOK_TOKEN }}
            DISCORD_USERNAME: Drive Apk Bot
