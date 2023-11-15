@@ -46,7 +46,7 @@ jobs:
 
       - id: show_env
         env:
-          JSON_ARCHIVE: 'cat embeds/embeds.json'
+          JSON_ARCHIVE: '$`cat embeds/embeds.json`'
 
         run: | 
           echo "$JSON_ARCHIVE"
