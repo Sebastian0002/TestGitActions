@@ -39,14 +39,17 @@ jobs:
       # - id: set_var
       #   run: |
       #     content=`cat embeds/embeds.json`
-      #     content="${content//'%'/'%25'}"
-      #     content="${content//$'\n'/'%0A'}"
-      #     content="${content//$'\r'/'%0D'}"
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
       #     echo "packageJson=$content" >> "$GITHUB_OUTPUT"
 
       - id: show_env
         run: | 
           JSON_ARCHIVE=`cat embeds/embeds.json`
+          content="${content//'%'/''}"
+          content="${content//$'\n'/''}"
+          content="${content//$'\r'/''}"
           echo "packageJson=$JSON_ARCHIVE" >> "$GITHUB_OUTPUT"
 
       - name: Actions for Discord
