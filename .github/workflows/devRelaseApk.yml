@@ -37,7 +37,7 @@ jobs:
       #     overwrite: "true"
       
       - name: Read embeds formJson
-      - id: show_env
+        id: show_env
         run: | 
           JSON_ARCHIVE=`cat embeds/embeds.json`
           JSON_ARCHIVE="${JSON_ARCHIVE//'%'/''}"
