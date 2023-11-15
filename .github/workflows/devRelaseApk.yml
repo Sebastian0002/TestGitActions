@@ -46,10 +46,8 @@ jobs:
 
       - name: show env
         env:
-          JSON_ARCHIVE: 
-            - title: hola mundo
-            - description: adios mundo
-            
+          JSON_ARCHIVE: '[{"title": "hola mundo"}]'
+
         run: echo "$JSON_ARCHIVE"
 
       - name: Actions for Discord
