@@ -40,7 +40,7 @@ jobs:
         run: |
           content=`cat json/embeds.json`
           echo "packageJson=$content" >> $GITHUB_OUTPUT
-          echo ${{ steps.set_var.GITHUB_OUTPUT }}
+          echo ${{ GITHUB_OUTPUT }}
 
       - name: Actions for Discord
         env:
