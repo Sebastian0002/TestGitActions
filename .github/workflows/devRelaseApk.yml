@@ -38,7 +38,7 @@ jobs:
 
       - id: set_var
         run: |
-          content=`cat json/embeds.json`
+          content= `cat json/embeds.json`
           echo "packageJson=$content" >> $GITHUB_OUTPUT
           echo $packageJson
 
