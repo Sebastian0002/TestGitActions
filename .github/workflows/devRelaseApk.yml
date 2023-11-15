@@ -39,8 +39,9 @@ jobs:
       - id: set_var
         run: |
           content=`cat json/embeds.json`
-          echo "packageJson=$content" >> $GITHUB_OUTPUT
-          echo ${{ packageJson }}
+          echo "::set-output name=packageJson::$content"
+      - run: |
+          echo "${{fromJson(steps.set_var.outputs.packageJson).version}}"
 
       - name: Actions for Discord
         env:
