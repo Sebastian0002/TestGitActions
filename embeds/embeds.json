@@ -1,6 +1,7 @@
 [
     {   
         "title": "My amazing CI/CD 2.0",
+        "image": "https://res.cloudinary.com/dvenistc9/image/upload/v1700083446/LogoAppForeground_ro1cxz.png",
         "description":"Hi! **this is an amazing message generate from JSON file :D** the application is succes deploy and __ready for review__. More information [here](https://discord.com)."
     }
 ]
