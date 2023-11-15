@@ -67,7 +67,6 @@ jobs:
       #     username: "DriveApk bot"
       #     message: ${{ secrets.MESSAGE_DISCORD }}
              
-      
       # - name: Send notify a telegram group
       #   uses: robotomize/notify-telegram@v0.1.0
       #   if: always()
