@@ -45,11 +45,8 @@ jobs:
       #     echo "packageJson=$content" >> "$GITHUB_OUTPUT"
 
       - id: show_env
-        env:
-          JSON_ARCHIVE: $`cat embeds/embeds.json`
-
         run: | 
-          echo "$JSON_ARCHIVE"
+          JSON_ARCHIVE=`cat embeds/embeds.json`
           echo "packageJson=$JSON_ARCHIVE" >> "$GITHUB_OUTPUT"
 
       - name: Actions for Discord
