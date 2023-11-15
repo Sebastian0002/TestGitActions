@@ -1,4 +1,6 @@
 {
   "embeds":
-    {"title":"Hello!","description":"Hi! :grinning:"}
+    [
+      {"title":"Hello!","description":"Hi! :grinning:"}
+    ]
 }
