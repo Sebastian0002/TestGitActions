@@ -36,28 +36,28 @@ jobs:
       #     name: "apk.zip" # optional string
       #     overwrite: "true"
 
-      # - id: set_var
-      #   run: |
-      #     content=`cat json/embeds.json`
-      #     content="${content//'%'/'%25'}"
-      #     content="${content//$'\n'/'%0A'}"
-      #     content="${content//$'\r'/'%0D'}"
-      #     echo "packageJson=$content" >> "$GITHUB_OUTPUT"
+      - id: set_var
+        run: |
+          content=`cat embeds/embeds.json`
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          echo "packageJson=$content" >> "$GITHUB_OUTPUT"
 
-      - id: show_env
-        env:
-          JSON_ARCHIVE: '[{"title": "hola mundo"}]'
+      # - id: show_env
+      #   env:
+      #     JSON_ARCHIVE: '[{"title": "hola mundo"}]'
 
-        run: | 
-          echo "$JSON_ARCHIVE"
-          echo "packageJson=$JSON_ARCHIVE" >> "$GITHUB_OUTPUT"
+      #   run: | 
+      #     echo "$JSON_ARCHIVE"
+      #     echo "packageJson=$JSON_ARCHIVE" >> "$GITHUB_OUTPUT"
 
       - name: Actions for Discord
         env:
            DISCORD_WEBHOOK: https://discord.com/api/webhooks/${{ secrets.WEBHOOK_ID }}/${{ secrets.WEBHOOK_TOKEN }}
            DISCORD_USERNAME: Drive Apk Bot
            DISCORD_AVATAR: https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png
-           DISCORD_EMBEDS: ${{ steps.show_env.outputs.packageJson }}
+           DISCORD_EMBEDS: ${{ steps.set_var.outputs.packageJson }}
         uses: Ilshidur/action-discord@0.3.2
         with:
           args: ${{ secrets.MESSAGE_DISCORD }}  
