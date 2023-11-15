@@ -1,6 +1,12 @@
 {
   "embeds":
     [
-      {"title":"Hello!","description":"Hi! :grinning:"}
+      {
+        "title":"Hello!",
+        "description":"Hi! :grinning:"},
+      {
+        "title": "Meow!",
+        "color": 1127128
+      }
     ]
 }
