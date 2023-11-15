@@ -38,7 +38,7 @@ jobs:
 
       - id: set_var
         run: |
-          content= `cat ./json/embeds.json`
+          content= `cat json/embeds.json`
           echo "::set-output name=packageJson::$content"
       - name: Actions for Discord
         env:
