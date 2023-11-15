@@ -47,9 +47,9 @@ jobs:
       - id: show_env
         run: | 
           JSON_ARCHIVE=`cat embeds/embeds.json`
-          content="${content//'%'/''}"
-          content="${content//$'\n'/''}"
-          content="${content//$'\r'/''}"
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
           echo "packageJson=$JSON_ARCHIVE" >> "$GITHUB_OUTPUT"
 
       - name: Actions for Discord
