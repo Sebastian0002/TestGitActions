@@ -44,18 +44,20 @@ jobs:
       #     content="${content//$'\r'/'%0D'}"
       #     echo "packageJson=$content" >> "$GITHUB_OUTPUT"
 
-      - name: show env
+      - id: show_env
         env:
           JSON_ARCHIVE: '[{"title": "hola mundo"}]'
 
-        run: echo "$JSON_ARCHIVE"
+        run: | 
+          echo "$JSON_ARCHIVE"
+          echo "packageJson=$JSON_ARCHIVE" >> "$GITHUB_OUTPUT"
 
       - name: Actions for Discord
         env:
            DISCORD_WEBHOOK: https://discord.com/api/webhooks/${{ secrets.WEBHOOK_ID }}/${{ secrets.WEBHOOK_TOKEN }}
            DISCORD_USERNAME: Drive Apk Bot
            DISCORD_AVATAR: https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png
-          #  DISCORD_EMBEDS: ${{ toJson(steps.set_var.outputs.packageJson) }} 
+           DISCORD_EMBEDS: ${{ toJson(steps.show_env.outputs.packageJson) }} 
         uses: Ilshidur/action-discord@0.3.2
         with:
           args: ${{ secrets.MESSAGE_DISCORD }}  
