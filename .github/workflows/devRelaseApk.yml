@@ -40,7 +40,7 @@ jobs:
         run: |
           content=`cat json/embeds.json`
           echo "packageJson=$content" >> $GITHUB_ENV
-          echo ${{ fromJson(env.packageJson) }}
+          echo ${{ toJson(env.packageJson) }}
 
       - name: Actions for Discord
         env:
