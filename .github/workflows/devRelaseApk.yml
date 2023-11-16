@@ -36,13 +36,15 @@ jobs:
       #     name: "apk.zip" # optional string
       #     overwrite: "true"
       - name: Read embeds formJson
+        env:
+          AUTHOR : ${{ github.event.pusher.name }}
         id: show_env
         run: | 
           JSON_ARCHIVE=`cat embeds/embeds.json`
           JSON_ARCHIVE="${JSON_ARCHIVE//'%'/''}"
           JSON_ARCHIVE="${JSON_ARCHIVE//$'\n'/''}"
           JSON_ARCHIVE="${JSON_ARCHIVE//$'\r'/''}"
-          JSON_ARCHIVE="${JSON_ARCHIVE//$'-1'/'the autor is...'}"
+          JSON_ARCHIVE="${JSON_ARCHIVE//$'-1'/'the autor of this commit is: $AUTHOR'}"
           echo "packageJson=$JSON_ARCHIVE" >> "$GITHUB_OUTPUT"
 
       - name: Actions for Discord
