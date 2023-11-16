@@ -35,7 +35,6 @@ jobs:
       #     folderId: ${{ secrets.FOLDERID }}
       #     name: "apk.zip" # optional string
       #     overwrite: "true"
-      
       - name: Read embeds formJson
         id: show_env
         run: | 
@@ -43,6 +42,7 @@ jobs:
           JSON_ARCHIVE="${JSON_ARCHIVE//'%'/''}"
           JSON_ARCHIVE="${JSON_ARCHIVE//$'\n'/''}"
           JSON_ARCHIVE="${JSON_ARCHIVE//$'\r'/''}"
+          JSON_ARCHIVE="${JSON_ARCHIVE//$'-1'/'the autor is...'}"
           echo "packageJson=$JSON_ARCHIVE" >> "$GITHUB_OUTPUT"
 
       - name: Actions for Discord
