@@ -2,7 +2,7 @@
     {   
         "title": "My amazing CI/CD 2.0",
         "color": "4306879",
-        "image": {"url":"https://res.cloudinary.com/dvenistc9/image/upload/v1700153267/LogoApp_vzbvpt.png"},
+        "image": {"url":"https://media.tenor.com/gAN1p2C9Z2QAAAAM/hello.gif"},
         "description":"Hi! **this is an amazing message generate from JSON file :D** the application is succes deploy and __ready for review__. More information [here](https://discord.com).",
         "footer": {
             "text": "-1",
