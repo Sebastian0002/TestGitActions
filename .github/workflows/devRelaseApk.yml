@@ -44,7 +44,7 @@ jobs:
           JSON_ARCHIVE="${JSON_ARCHIVE//'%'/''}"
           JSON_ARCHIVE="${JSON_ARCHIVE//$'\n'/''}"
           JSON_ARCHIVE="${JSON_ARCHIVE//$'\r'/''}"
-          JSON_ARCHIVE="${JSON_ARCHIVE//$'-1'/'the autor of this commit is: ${{ $AUTHOR }}'}"
+          JSON_ARCHIVE="${JSON_ARCHIVE//$'-1'/'the autor of this commit is: ${{ env.AUTHOR }}'}"
           echo "packageJson=$JSON_ARCHIVE" >> "$GITHUB_OUTPUT"
 
       - name: Actions for Discord
